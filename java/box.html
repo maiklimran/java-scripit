@@ -1,0 +1,40 @@
+<!-- Different Selectors
+------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <a href="https://google.com" class="link">Google</a>
+        <a href="https://facebook.com" class="link">Facebook</a>
+        <a href="https://gmail.com" class="link">Gmail</a>
+    </div>
+
+
+    <script>
+        // class selector
+        //const links = document.getElementsByClassName("link");
+        //const links = document.querySelector(".link");
+        const links = document.getElementsByTagName("a");
+        console.log(links);
+
+        for (let i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function (event) {
+                // we can stop default behaviour of events
+                event.preventDefault();
+                this.style.color = "red"
+            })
+                ;
+        }
+
+    </script>
+
+</body>
+
+</html>

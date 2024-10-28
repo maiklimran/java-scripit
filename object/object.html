@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+const student = ["ali", "lodhran", 18];
+
+
+console.log( student[2] );
+
+const stdobject = {
+  name: "ali",
+  city: "lodhran",
+  age: 18
+}
+
+
+// update if key is available in object
+stdobject.age = 20;
+
+// add new key if key is not available in object
+stdobject.gender = "Male";
+
+
+
+console.log( stdobject.age)
+console.log(stdobject.city)
+
+// delete a key
+delete stdobject.city
+
+console.log(stdobject)
+console.log( stdobject['gender'] )
+    </script>
+    
+</body>
+</html>

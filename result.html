@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Manipulator</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">String Manipulator</h1>
+      <div class="form-group">
+        <label for="userInput">Enter a String:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userInput"
+          placeholder="Type your string here"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="operation">Choose an Operation:</label>
+        <select class="form-control" id="operation">
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+          <option value="count">Character Count</option>
+          <option value="trim">Trim (Remove extra spaces)</option>
+          <option value="slice">Slice (0 to 5)</option>
+          <option value="replace">Replace "JavaScript" with "JS"</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="manipulateString()">
+        Apply
+      </button>
+
+      <div class="mt-4">
+        <h4>Result:</h4>
+        <p id="result" class="alert alert-secondary"></p>
+      </div>
+    </div>
+ </body>
+ <script>
+    function manipulateString() {
+      // Get user input and selected operation
+      let userInput = document.getElementById("userInput").value;
+      let operation = document.getElementById("operation").value;
+      let result = "";
+
+      // Using if-else for string manipulation
+      if (operation == "uppercase") {
+        result = userInput.toUpperCase();
+      } else if (operation == "lowercase") {
+        result = userInput.toLowerCase();
+      } else if (operation == "count") {
+        // result = Character Count: ${userInput.length};
+      } else if (operation == "trim") {
+        result = userInput.trim();
+      } else if (operation == "slice") {
+        result = userInput.slice(0, 5);
+      } else if (operation == "replace") {
+        result = userInput.replace(/JavaScript/g, "JS");
+      } else {
+        result = "Invalid operation";
+      }
+
+      // Display the result using the provided id and class
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</html>
